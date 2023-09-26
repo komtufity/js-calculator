@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kalkulator Ver. 1</title>
+</head>
+
+<body>
+    
+    <h1>KALKULATOR</h1>
+    <input type="text" id="num1">
+    <input type="text" id="num2"><br>
+    <button id="btn" onclick="myFunction(0)">+</button>
+    <button id="btn" onclick="myFunction(1)">-</button>
+    <button id="btn" onclick="myFunction(2)">*</button>
+    <button id="btn" onclick="myFunction(3)">/</button>
+
+    <br><p1 id="result"></p1>
+
+    <script>
+        function myFunction(test) {
+            let x = document.getElementById("num1").value;
+            x = Number(x);
+            let y = document.getElementById("num2").value;
+            y = Number(y);
+            switch (test){
+                case 0: 
+                document.getElementById("result").innerHTML = x + y;
+                break;
+
+                case 1: 
+                document.getElementById("result").innerHTML = x - y;
+                break;
+
+                case 2: 
+                document.getElementById("result").innerHTML = x * y;
+                break;
+
+                case 3: 
+                document.getElementById("result").innerHTML = x / y;
+                break;
+            }
+        }
+    </script>
+</body>
+</html>

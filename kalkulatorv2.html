@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kalkulator Ver. 2</title>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"
+        integrity=
+"sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"
+        integrity=
+"sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+    
+    <h1>KALKULATOR</h1>
+    <p>Number:</p><br>
+    <p id="num1"></p><br>
+    <button id="btn" onclick="NumberInput(0)">0</button>
+    <button id="btn" onclick="NumberInput(1)">1</button>
+    <button id="btn" onclick="NumberInput(2)">2</button>
+    <button id="btn" onclick="NumberInput(3)">3</button>
+    <button id="btn" onclick="NumberInput(4)">4</button>
+    <button id="btn" onclick="NumberInput(5)">5</button>
+    <button id="btn" onclick="NumberInput(6)">6</button>
+    <button id="btn" onclick="NumberInput(7)">7</button>
+    <button id="btn" onclick="NumberInput(8)">8</button>
+    <button id="btn" onclick="NumberInput(9)">9</button>
+    <button id="btn" onclick="AllClear()">AC</button><br>
+    <button id="btn" onclick="NumberInput(11)">+</button>
+    <button id="btn" onclick="NumberInput(12)">-</button>
+    <button id="btn" onclick="NumberInput(13)">*</button>
+    <button id="btn" onclick="NumberInput(14)">/</button>
+    <button id="btn" onclick="Evaluate()">=</button>
+
+    <br><p1 id="result">Result: </p1>
+
+    <script>
+        function NumberInput(num) {
+            let x = document.getElementById("num1").innerText;
+            if (num < 10) document.getElementById("num1").innerText = x+num;
+            else switch (num) {
+                case 11:
+                document.getElementById("num1").innerText = x+"+";
+                break;
+
+                case 12:
+                document.getElementById("num1").innerText = x+"-";
+                break;
+
+                case 13:
+                document.getElementById("num1").innerText = x+"*";
+                break;
+
+                case 14:
+                document.getElementById("num1").innerText = x+"/";
+                break;
+            }
+            
+        }
+
+        function AllClear() {
+            document.getElementById("num1").innerText = "";
+        }
+
+        function Evaluate() {
+            let x = document.getElementById("num1").innerText;
+            let hasil = math.evaluate(x);
+            document.getElementById("result").innerText = hasil;
+        }
+    </script>
+</body>
+</html>
